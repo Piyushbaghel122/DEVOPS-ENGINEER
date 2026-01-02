@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laundry Services</title>
+<style>
+  *{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+}
+
+
+nav{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    margin: auto;
+    max-width:1200px;
+    color: #eaebed;
+
+  }
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  padding:15px 25px;
+  border-bottom:1px solid #ddd;
+  margin: autox-width;
+    align-items:center;
+    max-width:1200px;
+  background-color: navy;
+    color:white;
+
+
+}
+
+.hero{
+  display:flex;
+  gap:30px;
+  padding:40px;
+}
+
+.achievements{
+  background:#e8f0ff;
+  text-align:center;
+  padding:25px;
+}
+
+.stats{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+}
+
+.booking{
+  display:flex;
+  gap:25px;
+  padding:30px;
+}
+
+.left,.right{
+  flex:1;
+  border:1px solid #ddd;
+  padding:20px;
+  border-radius:10px;
+}
+
+.service{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+}
+
+button{ cursor:pointer; }
+
+footer{
+  background:#0d1a2d;
+  color:white;
+  padding:25px;
+}
+
+.footer-grid{
+  display:flex;
+  justify-content:space-between;
+}
+
+.copy{
+  text-align:center;
+  margin-top:10px;
+  color:#aaa;
+}
+
+
+</style>
+
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("YOUR_PUBLIC_KEY");
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="navbar">
+    <div class="logo">LaundryPro</div>
+
+    <nav>
+      <a href="#home" style = "color: white" >Home</a>
+      <a href="#services" style = "color: white" >Services</a>
+      <a href="#about" style = "color: white" >About Us</a>
+      <a href="#contact" style = "color: white" >Contact Us</a>
+    </nav>
+
+    <div class="user">Hi, User!</div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-left">
+      <h1>Revitalize Your Clothes with Expert Laundry Services!</h1>
+      <p>Premium care • Quick delivery • Affordable prices</p>
+
+      <button onclick="scrollToBooking()">Book a Service Today</button>
+    </div>
+
+    <div class="hero-right">
+      <img src="https://cpimg.tistatic.com/05578103/b/4/Videocon-8-Kg-Semi-Automatic-Washing-Machine.jpeg" width: 100px;
+      height="150px" />
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="achievements">
+    <h2>Our Achievements</h2>
+
+    <div class="stats">
+      <div>15+ Laundry Services</div>
+      <div>240+ Happy Customers</div>
+      <div>2+ Years Experience</div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="services" class="booking">
+
+    <!-- LEFT -->
+    <div class="left">
+      <h2>Our Services</h2>
+
+      <div class="service">
+        <span>Dry Cleaning</span><span>₹200</span>
+        <button onclick="addItem('Dry Cleaning',200)">Add</button>
+      </div>
+
+      <div class="service">
+        <span>Wash & Fold</span><span>₹150</span>
+        <button onclick="addItem('Wash & Fold',150)">Add</button>
+      </div>
+
+      <div class="service">
+        <span>Ironing</span><span>₹100</span>
+        <button onclick="addItem('Ironing',100)">Add</button>
+      </div>
+
+      <p class="hint">Add items to cart then book</p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+      <h3>Added Items</h3>
+
+      <ul id="cart"></ul>
+
+      <p>Total: ₹<span id="total">0</span></p>
+
+      <h3>Book Now</h3>
+
+      <input type="text" id="fullName" placeholder="Full Name" />
+      <input type="email" id="email" placeholder="Email" />
+      <input type="text" id="phone" placeholder="Phone" />
+
+      <button onclick="bookNow()">Book Now</button>
+
+      <p id="message"></p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="quality">
+    <h2>Why Choose Us?</h2>
+    <p>Premium service, quick support, timely delivery and affordable pricing.</p>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <h3>Subscribe to our newsletter</h3>
+    <input type="text" placeholder="Full Name" />
+    <input type="email" placeholder="Email" />
+    <button>Subscribe</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="footer-grid">
+
+      <div>
+        <h4>LaundryPro</h4>
+        <p>Fresh clothes, happy life.</p>
+      </div>
+
+      <div>
+        <h4>Important Links</h4>
+        <p>About Us</p>
+        <p>Terms</p>
+        <p>Support</p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>Email: support@laundry.com</p>
+      </div>
+
+    </div>
+    <p class="copy">© 2026 LaundryPro</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
